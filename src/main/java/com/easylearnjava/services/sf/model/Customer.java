@@ -10,12 +10,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import io.swagger.annotations.Api;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
 
 @Entity
 @Data
+@Api(value = "customers service", description="Customer web services")
 public class Customer {
 
 	@Id
