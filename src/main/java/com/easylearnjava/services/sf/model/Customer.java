@@ -11,34 +11,77 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import io.swagger.annotations.Api;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Setter;
 
 @Entity
-@Data
-@Api(value = "customers service", description="Customer web services")
+@Api
 public class Customer {
 
 	@Id
 	@Column(name = "CUSTOMER_ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Setter(AccessLevel.PROTECTED)
 	private long customerId;
-	
-	@Column(name = "FIRST_NAME", length=20, nullable=false)
+
+	@Column(name = "FIRST_NAME", length = 20, nullable = false)
 	private String firstName;
-	
-	@Column(name = "LAST_NAME", length=20, nullable=false)
+
+	@Column(name = "LAST_NAME", length = 20, nullable = false)
 	private String lastName;
-	
-	@Column(name = "EMAIL_ID", length=30)
+
+	@Column(name = "EMAIL_ID", length = 30)
 	private String emailId;
-	
-	@Column(name = "PHONE_NUMBER", length=15)
+
+	@Column(name = "PHONE_NUMBER", length = 15)
 	private String phoneNumber;
 
 	@OneToMany(mappedBy = "customerObj", cascade = CascadeType.ALL)
 	private List<Address> addressList;
-	
+
+	public long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(long customerId) {
+		this.customerId = customerId;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public List<Address> getAddressList() {
+		return addressList;
+	}
+
+	public void setAddressList(List<Address> addressList) {
+		this.addressList = addressList;
+	}
+
 }
