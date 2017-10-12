@@ -16,11 +16,11 @@ import lombok.Setter;
 
 //import java.sql.Blob;
 
-@Entity
-@Data
+//@Entity
+//@Data
 public class Products {
 
-	@Id
+	/*@Id
 	@Column(name = "PRODUCT_ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Setter(AccessLevel.PROTECTED)
@@ -33,7 +33,7 @@ public class Products {
 	private Date productDescription;
 	
     @Column(name="price", precision=5, scale=2, nullable=false)
-	private Double productPrice;
+	private Double productPrice;*/
 	
 	/*@Column(name = "picture")
 	private BLOB productPicture;	*/
