@@ -5,6 +5,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.easylearnjava.services.sf.model.Products;
 
-@RepositoryRestResource(path="products")
-public interface ProductRepository extends CrudRepository<Products, Long>{
+//@RepositoryRestResource(path="products")
+public interface ProductRepository { //extends CrudRepository<Products, Long>{
 }
