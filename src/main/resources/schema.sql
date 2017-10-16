@@ -4,6 +4,14 @@
     drop table IF EXISTS customer;
 
     drop table IF EXISTS orders;
+    
+     create table customer (
+        customer_id INT PRIMARY KEY     NOT NULL,
+        email_id varchar(30),
+        first_name varchar(20) not null,
+        last_name varchar(20) not null,
+        phone_number varchar(15)
+    );
 
     create table address (
         address_id INT PRIMARY KEY     NOT NULL,
@@ -17,13 +25,7 @@
         customer_id_fk INT references customer(customer_id)
     );
 
-    create table customer (
-        customer_id INT PRIMARY KEY     NOT NULL,
-        email_id varchar(30),
-        first_name varchar(20) not null,
-        last_name varchar(20) not null,
-        phone_number varchar(15)
-    );
+   
 
     create table orders (
         order_id INT PRIMARY KEY     NOT NULL,
